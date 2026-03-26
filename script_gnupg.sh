@@ -13,4 +13,7 @@ gpg --verify doc_no_cifrado.txt.gpg.gpg// Verify the signature of the file
 gpg --verify doc_no_cifrado_sing.txt.gpg// Verify the signature of the clear-signed file
 gpg --verify doc_no_cifrado_detach.txt.gpg// Verify the signature of the detached signature file
 gpg --edit-key cristopheribujes@gmail.com// Edit the key associated with the email address
-
+gpg --encrypt --sign --recipient cristopheribujes@gmail.com doc_cifrado.txt.gpg // Encrypt and sign the file for the recipient
+gpg --decrypt doc_cifrado_final.txt.gpg // Decrypt the final encrypted file
+cat // Display the contents of the decrypted file
+cat 
