@@ -7,4 +7,9 @@ gpg --import mi_llave_publica_venegas.asc // Import a public key from a file
 echo "este mensaje es secreto" >doc_no_cifrado.txt
 gpg --encrypt --recipient israelfarfan99@gmail.com doc_cifrado.tx
 gpg -- decrypt --recipient// Decrypt the file using the recipient's email 
+gpg --sign doc_no_cifrado.txt.gpg// Sign the file with the user's private key
+gpg --clearsign doc_no_cifrado.txt.gpg// Clear sign the file, which creates a human-readable signature
+gpg --verify doc_no_cifrado.txt.gpg.gpg// Verify the signature of the file
+gpg --verify doc_no_cifrado_sing.txt.gpg// Verify the signature of the clear-signed file
+gpg --verify doc_no_cifrado_detach.txt.gpg
 
