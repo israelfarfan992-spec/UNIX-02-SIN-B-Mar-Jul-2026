@@ -11,5 +11,6 @@ gpg --sign doc_no_cifrado.txt.gpg// Sign the file with the user's private key
 gpg --clearsign doc_no_cifrado.txt.gpg// Clear sign the file, which creates a human-readable signature
 gpg --verify doc_no_cifrado.txt.gpg.gpg// Verify the signature of the file
 gpg --verify doc_no_cifrado_sing.txt.gpg// Verify the signature of the clear-signed file
-gpg --verify doc_no_cifrado_detach.txt.gpg
+gpg --verify doc_no_cifrado_detach.txt.gpg// Verify the signature of the detached signature file
+gpg --edit-key cristopheribujes@gmail.com// Edit the key associated with the email address
 
