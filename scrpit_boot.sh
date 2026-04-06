@@ -30,4 +30,13 @@ Modify: 2026-04-06 12:52:38.508002665 +0000
 Change: 2026-04-06 12:52:38.508002665 +0000
  Birth: 2026-04-06 12:52:38.508002665 +0000
 man mkdir // # Display the manual page for the mkdir command to learn more about its options and usage 
- 
+pwd // # Print the current working directory to confirm the location
+whoami // # Display the current user's username to confirm the user context
+ls // # List all files and directories in the root directory to see the contents
+ls -l // # List all files and directories in the root directory with detailed information
+ls -la // # List all files and directories in the root directory, including hidden files, with detailed information
+ls -lh // # List all files and directories in the root directory with detailed information and human-readable file sizes
+ls -lt // # List all files and directories in the root directory with detailed information and human-readable file sizes, including hidden files
+ls / // # List all files and directories in the root directory to see the contents  
+ls /etc | head -20 // # List the first 20 files and directories in the /etc directory to see its contents
+ls /dev | head -20 // # List the first 20 files and directories in the /dev directory to see its contents
