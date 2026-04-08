@@ -43,3 +43,8 @@ ls /dev | head -20 // # List the first 20 files and directories in the /dev dire
 git clone --depth 1 https://github.com/torvalds/linux.git
 cd linux
 make -j 2
+sudo mkdir /boot-files
+sudo cp arch/x86/boot/bzImage /boot-files/
+cd ..
+git clone --depth 1 https://git.busybox.net/busybox
+cd busybox
