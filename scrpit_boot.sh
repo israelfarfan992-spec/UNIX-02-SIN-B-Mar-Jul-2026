@@ -51,3 +51,4 @@ cd busybox
 make menuconfig
 make -j 2
 sudo mkdir /boot-files/initramfs
+sudo make CONFIG_PREFIX=/boot-files/initramfs install
