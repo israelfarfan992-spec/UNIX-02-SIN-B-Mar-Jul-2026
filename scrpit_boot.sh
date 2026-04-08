@@ -40,3 +40,6 @@ ls -lt // # List all files and directories in the root directory with detailed i
 ls / // # List all files and directories in the root directory to see the contents  
 ls /etc | head -20 // # List the first 20 files and directories in the /etc directory to see its contents
 ls /dev | head -20 // # List the first 20 files and directories in the /dev directory to see its contents
+git clone --depth 1 https://github.com/torvalds/linux.git
+cd linux
+make -j 2
