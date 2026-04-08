@@ -48,3 +48,6 @@ sudo cp arch/x86/boot/bzImage /boot-files/
 cd ..
 git clone --depth 1 https://git.busybox.net/busybox
 cd busybox
+make menuconfig
+make -j 2
+sudo mkdir /boot-files/initramfs
