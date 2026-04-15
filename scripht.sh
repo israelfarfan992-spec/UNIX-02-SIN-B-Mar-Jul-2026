@@ -44,5 +44,5 @@ chmod u+rw,go-rwx script.sh  # Gives read/write to owner and removes all permiss
 
 sudo echo "hola" > /etc/archivo_protegido #does not work as expected because redirection runs before sudo.
 
-echo "hola" | sudo tee /etc/archivo_protegido  # This works because tee runs with sudo privileges and can write to the protected file.
+echo "hola" | sudo tee /etc/archivo_protegido > /dev/null # This works because tee runs with sudo privileges and can write to the protected file.
 cat /etc/archivo_protegido  # Verify the content of the protected file
