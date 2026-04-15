@@ -8,3 +8,5 @@ ls -l hola.sh # Verify that the execute permission has been added
 ./hola.sh # Run the script again to confirm it still works after changing permissions
 
 ls /etc # List the contents of the /etc directory, which contains system configuration files
+
+touch /etc/prueba.txt # Create a new file named prueba.txt in the /etc directory
