@@ -49,3 +49,6 @@ echo "hola" | sudo tee /etc/archivo_protegido # This also works and will display
 cat /etc/archivo_protegido  # Verify the content of the protected file
 sudo sh -c 'echo "chao" > /etc/archivo_protegido'  # Another way to write to the protected file using a shell command with sudo
 sudo su - // Switch to the root user, allowing you to execute commands with full privileges without needing to prefix them with sudo. Use exit to return to your normal user.
+echo "$HOME"  # This will print the home directory of the current user, which is useful to verify that you are running commands as the expected user
+echo '$HOME'  # This will print the literal string "$HOME" because the single quotes prevent variable expansion
+.
