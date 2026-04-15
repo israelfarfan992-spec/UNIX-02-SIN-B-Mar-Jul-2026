@@ -5,3 +5,4 @@ cat hola.sh # Display the contents of the script to verify it was created correc
 ls -l hola.sh # List the details of the hola.sh file
 chmod +x hola.sh # Make the script executable
 ls -l hola.sh # Verify that the execute permission has been added
+./hola.sh # Run the script again to confirm it still works after changing permissions
