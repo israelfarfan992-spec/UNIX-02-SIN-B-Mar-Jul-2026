@@ -34,3 +34,4 @@ chmod +x script.sh #
 chmod u+x script.sh #Add execute permission for the user (owner) of the file script.sh
 chmod o-r script-sh #Remove read permission for others (users who are not the owner or in the group) on the file script.sh
 chmod u+rw,go-rwx script.sh #Add read and write permissions for the user (owner) of the file script.sh, and remove all permissions for group and others on the file script.sh
+sudo echo "hola" > /etc/archivo_protegido
