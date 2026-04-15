@@ -48,3 +48,4 @@ echo "hola" | sudo tee /etc/archivo_protegido > /dev/null  # This works because 
 echo "hola" | sudo tee /etc/archivo_protegido # This also works and will display "hola" in the terminal while writing it to the protected file.
 cat /etc/archivo_protegido  # Verify the content of the protected file
 sudo sh -c 'echo "chao" > /etc/archivo_protegido'  # Another way to write to the protected file using a shell command with sudo
+sudo su - // Switch to the root user, allowing you to execute commands with full privileges without needing to prefix them with sudo. Use exit to return to your normal user.
