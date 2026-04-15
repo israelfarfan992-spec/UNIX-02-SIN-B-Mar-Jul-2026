@@ -47,3 +47,4 @@ sudo echo "hola" > /etc/archivo_protegido #does not work as expected because red
 echo "hola" | sudo tee /etc/archivo_protegido > /dev/null  # This works because tee runs with sudo privileges and can write to the protected file.
 echo "hola" | sudo tee /etc/archivo_protegido # This also works and will display "hola" in the terminal while writing it to the protected file.
 cat /etc/archivo_protegido  # Verify the content of the protected file
+sudo sh -c 'echo "chao" > /etc/archivo_protegido'  # Another way to write to the protected file using a shell command with sudo
