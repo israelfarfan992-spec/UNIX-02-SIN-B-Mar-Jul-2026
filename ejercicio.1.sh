@@ -6,3 +6,5 @@ ls -l hola.sh # List the details of the hola.sh file
 chmod +x hola.sh # Make the script executable
 ls -l hola.sh # Verify that the execute permission has been added
 ./hola.sh # Run the script again to confirm it still works after changing permissions
+
+ls /etc # List the contents of the /etc directory, which contains system configuration files
