@@ -19,3 +19,5 @@ id -g # Displays the current user's GID (Group ID)
 id -G # Displays the current user's group memberships (all GIDs)
 cat  /etc/group | grep codespace   # Searches for the group named "codespace" in the /etc/group file and displays its information
 cat /etc/gshadow # Searches for the group named "codespace" in the /etc/gshadow file, which contains secure group information, and displays its information
+mkdir ~/proyecto_unix/ # Creates a new directory named "proyecto_unix" in the current user's home directory
+ls -la ~/proyecto_unix/ # Lists the contents of the "proyecto_unix" directory in long format, showing hidden files as well
