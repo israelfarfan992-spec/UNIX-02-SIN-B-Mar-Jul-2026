@@ -13,3 +13,9 @@ print('salt2:', salt2) # Prints the second salt
 print('hash2:', hash2 [:50]) # Prints the second hash
 print() 
 print('son iguales?', hash1 == hash2) # Compares the two hashes and prints whether they are the same or not
+cat/etc/group | head -10 # Displays the first 10 lines of /etc/group, which contains system group information
+id -u # Displays the current user's UID (User ID)
+id -g # Displays the current user's GID (Group ID)
+id -G # Displays the current user's group memberships (all GIDs)
+cat  /etc/group | grep codespace   # Searches for the group named "codespace" in the /etc/group file and displays its information
+cat /etc/gshadow # Searches for the group named "codespace" in the /etc/gshadow file, which contains secure group information, and displays its information
