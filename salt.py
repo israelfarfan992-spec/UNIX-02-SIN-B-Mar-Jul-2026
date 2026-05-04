@@ -1,5 +1,4 @@
-id # Displays the current user's ID and group memberships
-cat /etc/passwd | head -10 # Displays the first 10 lines of /etc/passwd, which contains system user information 
+ 
 import crypt # Imports the crypt module, which provides functions for hashing passwords
 password = 'micontraseña123'
 salt1 = crypt.mksalt(crypt.METHOD_SHA512) # Generates a random salt using the SHA-512 method
