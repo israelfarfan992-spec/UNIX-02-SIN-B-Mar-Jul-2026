@@ -66,3 +66,14 @@ sudo adduser $USER marketing
 #see the actual state
 id $USER
 grep $USER /etc/group
+#create a temporal grou
+sudo groupadd grupo_temporal
+sudo usermod -aG grupo_temporal root
+id $USER #have temporal_group
+#now the error :usermod sin -a
+sudo usermod -G desarooladores $USER
+#this eliminathje all groups of user and add only desarrolladores
+id $USER #only have desarrolladores
+#restore
+sudo usermod -aG diseno,marketing,grupo_temporal root
+id root #have all groups again
