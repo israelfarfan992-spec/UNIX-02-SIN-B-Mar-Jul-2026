@@ -49,3 +49,9 @@ addgroup --gid 2100 marketing
 sudo addgroup --system cache_web
 #verifity
 grep "diseno\|marketing\|cache_web" /etc/group
+#see who groups permanently the actual user
+groups
+id
+#add user in to group whit usermod(lowlevel)
+sudo usermod -aG desarrolladores $USER
+sudo usermod -aG diseno $USER
