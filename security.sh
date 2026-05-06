@@ -33,3 +33,12 @@ grep "desarrolladores\|operaciones\|servicios_web" /etc/group
 grep -E "desarrolladores|operaciones|servicios_web" /etc/group 
 #see principals opcions 
 groupadd --help
+
+#see the range of GIDs on sistem
+grep "GID_MIN\|GID_MAX/|SYS_GID" /etc/login.defs
+#the groups of system have minius gid of user
+#on ubuntu usally:
+#SYS_GID_MIN= 100
+#SYS_GID_MAX= 999
+#GID_MIN= 1000
+#GID_MAX= 60000
