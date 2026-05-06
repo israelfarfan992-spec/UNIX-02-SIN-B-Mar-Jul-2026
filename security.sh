@@ -86,3 +86,14 @@ touch ~/lab_chgrp/scripts/deploy.sh
 #see the inicial state 
 ls -la ~/lab_chgrp/proyectos/
 ls -la ~/lab_chgrp/reportes/
+#change the gruop of the files
+sudo chgrp desarrolladores ~/lab_chgrp/proyectos/app.py
+ls -la ~/lab_chgrp/proyectos/
+sudo chgrp diseno ~/lab_chgrp/proyectos/config.json
+ls -la ~/lab_chgrp/proyectos/
+ls -la ~/lab_chgrp/reportes/
+#change recursively the directory
+sudo chgrp -R desarrolladores ~/lab_chgrp/scripts/
+ls -laR ~/lab_chgrp/scripts/
+#verbose for see who change
+sudo chgrp -Rv diseno ~/lab_chgrp/reportes/
