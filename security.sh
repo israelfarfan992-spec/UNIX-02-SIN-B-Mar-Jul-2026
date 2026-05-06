@@ -55,3 +55,14 @@ id
 #add user in to group whit usermod(lowlevel)
 sudo usermod -aG desarrolladores $USER
 sudo usermod -aG diseno $USER
+critic: the flag -a (append) its fundamental
+whit no -a, usermod remplace all groups of user 
+whit -a , add the new group whit no change the other groups of user
+#verifity change whit /etc/group
+grepp "desarrolladores\|diseno" /etc/group
+#add user a group whit adduser(highlevel)
+sudo adduser $USER operaciones
+sudo adduser $USER marketing
+#see the actual state
+id $USER
+grep $USER /etc/group
