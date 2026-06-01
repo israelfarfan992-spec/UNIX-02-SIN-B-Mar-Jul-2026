@@ -88,7 +88,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     # === Editores de texto y shells (intérpretes de comandos) ===
     neovim \
     vim \
-    zsh \
     bash-completion \
     \
     # === Herramientas de 4ta generación ===
@@ -217,15 +216,14 @@ RUN git config --system --add safe.directory '*' \
 # Lanza una shell bash interactiva. Codespaces la sobrescribe con su
 # propia terminal integrada de VS Code, pero es buena práctica dejarla
 # definida para que la imagen sea usable también con Docker puro.
-# Prompt del curso para bash
-RUN chsh -s /usr/bin/zsh/ root
+RUN chsh -s /bin/bash root
 
-RUN cat>> /root/.zshrc <<'EOF'
+RUN cat>> /root/.bashrc <<'EOF'
 
-PROMPT='%F{cyan}[israel_farfan]%f %F{yellow}%1~%f %(?.%F{green}ok,%F{red}notok %?)%f %#'
+PS1='\e[36m[israel_farfan]\e[0m \e[33m\w\e[0m $ '
 EOF
 
-CMD ["/usr/bin/zsh"]
+CMD ["/bin/bash"]
 
 
 
