@@ -5,7 +5,7 @@ set -x
 
 set +x
 
-#bash --version
+bash --version
 env 
 
 echo ${SHELL}
@@ -17,7 +17,7 @@ ps -ef
 df --human-readable #df -h
 
 chmod 777 blackhatbash1.sh
-#./blackhatbash1.sh
+./blackhatbash1.sh
 #bash -r blackhatbash1.sh #This option creates a restricted bash shell, which restricts certain potentially dangerous commands.
 
 
