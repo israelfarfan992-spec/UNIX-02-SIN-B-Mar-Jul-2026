@@ -10,3 +10,8 @@ ping -c 3 "${TARGET}"
 
 echo "The arguments are: $@ "
 echo "the total number of arguments i: $# "
+
+
+for args in "$@" ; do
+    echo "${args}"
+done
