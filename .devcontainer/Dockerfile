@@ -182,8 +182,19 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     # === Cliente HTTP más legible que curl para aprender ===
     httpie \
     \
-# Enables the Spanish UTF-8 locale by uncommenting it in the locale configuration file.
-# locale-gen generates the locale files so the system can use the new language settings.
+# Updates the package list and installs the required packages.
+# The -y flag automatically answers "yes" to installation prompts.
+# --no-install-recommends installs only the necessary packages to keep the image smaller.
+# Using one RUN instruction creates fewer Docker layers and improves build efficiency.
+# The && operator runs the next command only if the previous one is successful.
+# The "\" character continues the command on the next line for better readability.
+# gawk, sed, and grep are used for text processing.
+# shellcheck helps find errors in shell scripts.
+# nmap is used for network scanning.
+# tcpdump and tshark capture and analyze network traffic.
+# tor and proxychains4 allow traffic to be routed through proxy networks.
+# jq is used to process JSON data.
+# man-db provides access to Linux manual pages.
  # --- Después de instalar, activamos el idioma español ---
  # sed busca "# es_ES.UTF-8" en /etc/locale.gen y le quita el "#" para
  # activar esa línea. Luego locale-gen compila los archivos de idioma.
@@ -198,19 +209,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
  # Si los borráramos en otro RUN, seguirían ocupando en la capa anterior.
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
-# Updates the package list and installs all required tools.
-# The -y option automatically accepts installation prompts.
-# --no-install-recommends installs only essential packages to keep the image smaller.
-# Using a single RUN instruction reduces the number of Docker layers and saves space.
-# The && operator executes the next command only if the previous one succeeds.
-# The trailing "\" continues the command on the next line for better readability.
-# gawk, sed, and grep are text processing tools.
-# shellcheck checks shell scripts for errors.
-# nmap scans networks and open ports.
-# tcpdump and tshark capture and analyze network traffic.
-# tor and proxychains4 route traffic through anonymous proxy networks.
-# jq processes JSON data from the command line.
-# man-db provides access to Linux manual pages.
+ # Cleans the package cache and removes temporary package lists.
+# Doing this in the same RUN instruction reduces the final image size.
+
+
 
 
 # ----------------------------------------------------------------------------
