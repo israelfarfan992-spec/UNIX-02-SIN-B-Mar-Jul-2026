@@ -272,7 +272,8 @@ PROMPT='%F{cyan}[israel_farfan]%f %F{yellow}%1~%f %(?.%F{green}ok,%F{red}notok %
 EOF
 
 CMD ["/usr/bin/zsh"]
-
+# Defines the default command that runs when the container starts.
+# Unlike RUN, which executes during the image build, CMD runs when a new container is launched.
 
 
 
