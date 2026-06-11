@@ -194,6 +194,19 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
  # Si los borráramos en otro RUN, seguirían ocupando en la capa anterior.
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
+# Updates the package list and installs all required tools.
+# The -y option automatically accepts installation prompts.
+# --no-install-recommends installs only essential packages to keep the image smaller.
+# Using a single RUN instruction reduces the number of Docker layers and saves space.
+# The && operator executes the next command only if the previous one succeeds.
+# The trailing "\" continues the command on the next line for better readability.
+# gawk, sed, and grep are text processing tools.
+# shellcheck checks shell scripts for errors.
+# nmap scans networks and open ports.
+# tcpdump and tshark capture and analyze network traffic.
+# tor and proxychains4 route traffic through anonymous proxy networks.
+# jq processes JSON data from the command line.
+# man-db provides access to Linux manual pages.
 
 
 # ----------------------------------------------------------------------------
