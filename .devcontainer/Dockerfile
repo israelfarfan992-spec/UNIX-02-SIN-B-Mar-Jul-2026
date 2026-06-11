@@ -75,6 +75,8 @@ ENV DEBIAN_FRONTEND=noninteractive \
 # debconf-set-selections para que no detenga el build esperando input.
 RUN echo "wireshark-common wireshark-common/install-setuid boolean false" \
     | debconf-set-selections
+# Automatically answers Wireshark's installation question to avoid
+# interactive prompts during the build process.
 
 
 # ----------------------------------------------------------------------------
