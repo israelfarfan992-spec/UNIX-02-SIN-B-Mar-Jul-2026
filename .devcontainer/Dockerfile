@@ -222,7 +222,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # cambiamos a bash por si agregamos más instrucciones con sintaxis
 # moderna (arrays, [[ ]], etc.).
 SHELL ["/bin/bash", "-c"]
-
+# Changes the default shell from sh to bash.
+# This allows future RUN commands to use Bash-specific features and syntax.
 
 # ----------------------------------------------------------------------------
 # WORKDIR: directorio de trabajo al entrar al contenedor
