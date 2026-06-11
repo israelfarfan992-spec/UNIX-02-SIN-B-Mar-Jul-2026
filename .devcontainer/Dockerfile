@@ -182,12 +182,16 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     # === Cliente HTTP más legible que curl para aprender ===
     httpie \
     \
+# Enables the Spanish UTF-8 locale by uncommenting it in the locale configuration file.
+# locale-gen generates the locale files so the system can use the new language settings.
  # --- Después de instalar, activamos el idioma español ---
  # sed busca "# es_ES.UTF-8" en /etc/locale.gen y le quita el "#" para
  # activar esa línea. Luego locale-gen compila los archivos de idioma.
  && sed -i 's/# es_ES.UTF-8/es_ES.UTF-8/' /etc/locale.gen \
  && locale-gen \
  \
+ # Enables the Spanish UTF-8 locale by uncommenting it in the locale configuration file.
+# locale-gen generates the locale files so the system can use the new language settings.
  # --- Limpieza final: reducir el tamaño de la imagen ---
  # apt deja archivos de caché que ya no necesitamos después de instalar.
  # Borrarlos aquí (en el mismo RUN) hace la capa final más pequeña.
