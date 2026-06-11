@@ -59,6 +59,11 @@ ENV DEBIAN_FRONTEND=noninteractive \
     LANG=es_ES.UTF-8 \
     LC_ALL=es_ES.UTF-8 \
     TERM=xterm-256color
+# Sets environment variables for the container.
+# DEBIAN_FRONTEND=noninteractive prevents installation prompts.
+# LANG=es_ES.UTF-8 sets the default language to Spanish with UTF-8 encoding.
+# LC_ALL=es_ES.UTF-8 applies the locale settings to all categories.
+# TERM=xterm-256color enables support for 256 terminal colors.
 
 
 # ----------------------------------------------------------------------------
