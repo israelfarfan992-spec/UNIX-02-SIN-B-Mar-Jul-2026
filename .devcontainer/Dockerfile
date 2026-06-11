@@ -264,6 +264,9 @@ RUN chsh -s /usr/bin/zsh/ root
 # New terminal sessions will start using Zsh instead of the previous shell.
 
 RUN cat>> /root/.zshrc <<'EOF'
+# Uses a heredoc to write multiple lines into the .zshrc configuration file.
+# The PROMPT variable customizes the appearance of the Zsh command prompt.
+
 
 PROMPT='%F{cyan}[israel_farfan]%f %F{yellow}%1~%f %(?.%F{green}ok,%F{red}notok %?)%f %#'
 EOF
