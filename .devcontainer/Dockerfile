@@ -232,7 +232,8 @@ SHELL ["/bin/bash", "-c"]
 # /workspaces/<nombre-del-repo>. Establecer /workspaces aquí hace que las
 # terminales se abran cerca de nuestros archivos del curso.
 WORKDIR /workspaces
-
+# Sets /workspaces as the default working directory.
+# All following commands will run from this location unless another directory is specified.
 # Configuración de Git para el contenedor:
 # - safe.directory *: confía en cualquier repo montado (necesario porque
 #   /workspaces/... tiene un UID distinto al de root dentro del container).
