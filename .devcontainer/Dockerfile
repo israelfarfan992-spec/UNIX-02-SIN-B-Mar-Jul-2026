@@ -27,7 +27,11 @@ FROM kalilinux/kali-rolling:latest
 #specifies the base image for the Docker container. 
 #It tells Docker to start with the latest Kali Linux rolling release, 
 #and all subsequent instructions are applied on top of this image.
-
+#image / layer / cache idea block B
+# Docker builds an image using multiple layers.
+# Each instruction creates a new layer that can be cached and reused.
+# The order of instructions is important because changing an early layer
+# forces Docker to rebuild all the layers that follow.
 
 # ----------------------------------------------------------------------------
 # ENV: variables de entorno permanentes dentro del contenedor
