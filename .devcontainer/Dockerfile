@@ -260,6 +260,8 @@ RUN git config --system --add safe.directory '*' \
 # definida para que la imagen sea usable también con Docker puro.
 # Prompt del curso para bash
 RUN chsh -s /usr/bin/zsh/ root
+# Changes the default shell for the root user to Zsh.
+# New terminal sessions will start using Zsh instead of the previous shell.
 
 RUN cat>> /root/.zshrc <<'EOF'
 
