@@ -23,7 +23,10 @@
 # En lugar de partir de cero, partimos de la imagen oficial de Kali Linux
 # en su versión "rolling" (actualización continua, siempre al día).
 # Todo lo que instalemos más abajo se apila ENCIMA de esta base.
-FROM kalilinux/kali-rolling:latest
+FROM kalilinux/kali-rolling:latest 
+#specifies the base image for the Docker container. 
+#It tells Docker to start with the latest Kali Linux rolling release, 
+#and all subsequent instructions are applied on top of this image.
 
 
 # ----------------------------------------------------------------------------
