@@ -538,3 +538,93 @@ FINAL WEIGHTED SCORE                     |    96 |   100
 [0;34mTotal lines:[0m 5086
 [0;34mMessages following convention:[0m 0/70
 
+
+[0;36m========================================[0m
+[0;36mBRANCH EVALUATOR: blackhatbash[0m
+[0;36m========================================[0m
+
+[0;34m[INFO][0m Validating repository...
+[0;32m[✓][0m Repositorio Git validado en: .
+[0;34m[INFO][0m Validating branch...
+[0;32m[✓][0m Rama 'blackhatbash' encontrada
+
+[0;36m========================================[0m
+[0;36mCOLLECTING DATA[0m
+[0;36m========================================[0m
+
+[0;32m[✓][0m Data collected
+
+[0;36m========================================[0m
+[0;36mCALCULATING METRICS[0m
+[0;36m========================================[0m
+
+[0;34m[INFO][0m 1. Commit quality...
+[0;32m[✓][0m Puntuación: 100/100
+[0;34m[INFO][0m 2. Commit timing...
+[0;32m[✓][0m Score: 88/100 (In-hours: 63, Out-hours: 8)
+[0;34m[INFO][0m 3. Message quality...
+[0;32m[✓][0m Puntuación: 100/100 (Excelente: 71, Bueno: 0, Pobre: 0)
+[0;34m[INFO][0m 4. Commit consistency...
+[0;32m[✓][0m Score: 95/100 (Total: 71 commits over 91 days)
+[0;34m[INFO][0m 5. Change coverage...
+[0;32m[✓][0m Puntuación: 96/100 (Archivos: 7, Promedio por commit: 0)
+[0;34m[INFO][0m 6. Commit size...
+[0;32m[✓][0m Score: 98/100 (Total lines: 5569, Average: 78 per commit)
+[0;34m[INFO][0m 7. Merge commit cleanliness...
+[0;32m[✓][0m Puntuación: 100/100 (Merge commits: 0)
+[0;34m[INFO][0m 8. Out-of-hours activity...
+[0;32m[✓][0m Score: 95/100 (Late night: 1, After hours: 7, Weekend: 0)
+[0;34m[INFO][0m 9. Code integrity...
+./evaluate_blackhatbash.sh: línea 418: [: 0
+0: se esperaba un entero
+[0;32m[✓][0m Puntuación: 100/100 (Problemas detectados: 0)
+[0;34m[INFO][0m 10. Naming convention...
+[0;32m[✓][0m Score: 100/100 (Conventional: 0/71)
+
+[0;36m========================================[0m
+[0;36mFINAL RESULT[0m
+[0;36m========================================[0m
+
+
+[0;35m╔════════════════════════════════════════╗[0m
+[0;35m║[0m         FINAL SCORE: [0;32m96/100[0m[0;35m            ║[0m
+[0;35m║[0m         Grade: [1;33mEXCELENTE (A)[0m[0;35m     ║[0m
+[0;35m╚════════════════════════════════════════╝[0m
+
+
+[0;36m========================================[0m
+[0;36mGENERATING REPORTS[0m
+[0;36m========================================[0m
+
+[0;32m[✓][0m JSON report: ./blackhatbash_reports/rubrica_20260617_134807.json
+[0;32m[✓][0m HTML report: ./blackhatbash_reports/rubrica_20260617_134807.html
+
+[0;36m=== SCORE SUMMARY ===[0m
+
+METRIC                                   | SCORE | WEIGHT %
+───────────────────────────────────── | ───── | ──────
+1. Commit Quality                        |   100 |    15
+2. Commit Timing (7 AM - 5 PM)           |    88 |    15
+3. Message Quality                       |   100 |    15
+4. Consistency                           |    95 |    10
+5. Change Coverage                       |    96 |    10
+6. Commit Size                           |    98 |    10
+7. Merge Cleanliness                     |   100 |     5
+8. Out-of-Hours Activity                 |    95 |     5
+9. Code Integrity                        |   100 |    10
+10. Naming Convention                    |   100 |     5
+───────────────────────────────────── | ───── | ──────
+FINAL WEIGHTED SCORE                     |    96 |   100
+
+
+[0;36m========================================[0m
+[0;36mTECHNICAL DETAILS[0m
+[0;36m========================================[0m
+
+[0;34mTotal commits:[0m 71
+[0;34mDevelopment period:[0m 91 days
+[0;34mAverage commits/day:[0m 0
+[0;34mFiles modified:[0m 7
+[0;34mTotal lines:[0m 5569
+[0;34mMessages following convention:[0m 0/71
+
