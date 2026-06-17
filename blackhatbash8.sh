@@ -22,3 +22,18 @@ sed '1d' log.txt
 sed '$d' log.txt
 sed -n '2,15 p' log.txt
 sed -i '1d' log.txt
+
+[israel_farfan] /workspaces/UNIX-02-SIN-B-Mar-Jul-2026 $ sleep 100 &
+[2] 21933
+
+[israel_farfan] /workspaces/UNIX-02-SIN-B-Mar-Jul-2026 $ ps -ef | grep sleep
+[1]-  Hecho                      sleep 100
+root           1       0  0 12:21 ?        00:00:00 /bin/sh -c echo Container started trap "exit 0" 15  exec "$@" while sleep 1 & wait $!; do :; done -
+root       21933     722  0 13:14 pts/2    00:00:00 sleep 100
+root       21965       1  0 13:14 ?        00:00:00 sleep 1
+root       21972     722  0 13:14 pts/2    00:00:00 grep --color=auto sleep
+
+[israel_farfan] /workspaces/UNIX-02-SIN-B-Mar-Jul-2026 $ jobs
+[2]+  Ejecutando                 sleep 100 &
+
+
