@@ -543,22 +543,22 @@ generate_html_report() {
 <body>
     <div class="container">
         <div class="header">
-            <h1>📊 Evaluación de Rama: blackhatbash</h1>
-            <p>Rúbrica completa de análisis de commits y código</p>
+            <h1>📊 Branch Evaluation: blackhatbash</h1>
+            <p>Complete rubric analysis of commits and code</p>
         </div>
         <div class="info-grid">
-            <div class="info-item"><label>Repositorio</label><value>REPO_PLACEHOLDER</value></div>
-            <div class="info-item"><label>Rama</label><value>RAMA_PLACEHOLDER</value></div>
-            <div class="info-item"><label>Usuario</label><value>USUARIO_PLACEHOLDER</value></div>
-            <div class="info-item"><label>Fecha de Evaluación</label><value>FECHA_PLACEHOLDER</value></div>
+            <div class="info-item"><label>Repository</label><value>REPO_PLACEHOLDER</value></div>
+            <div class="info-item"><label>Branch</label><value>RAMA_PLACEHOLDER</value></div>
+            <div class="info-item"><label>User</label><value>USUARIO_PLACEHOLDER</value></div>
+            <div class="info-item"><label>Evaluation Date</label><value>FECHA_PLACEHOLDER</value></div>
         </div>
         <div class="final-score">
             <h2>PUNTUACION_FINAL_PLACEHOLDER / 100</h2>
-            <p>Calificación Oficial</p>
+            <p>Official grade</p>
             <div class="rating">RATING_PLACEHOLDER</div>
         </div>
         <div class="footer">
-            <p>Evaluación automatizada generada el FECHA_PLACEHOLDER</p>
+            <p>Automated evaluation generated on FECHA_PLACEHOLDER</p>
             <p>Script: evaluate_blackhatbash.sh v1.1</p>
         </div>
     </div>
@@ -580,36 +580,36 @@ EOHTML
 # ============================================================================
 
 run_evaluation() {
-    log_header "EVALUADOR DE RAMA: blackhatbash"
+    log_header "BRANCH EVALUATOR: blackhatbash"
     
-    log_info "Validando repositorio..."
+    log_info "Validating repository..."
     validate_repo
     
-    log_info "Validando rama..."
+    log_info "Validating branch..."
     validate_branch
     
     mkdir -p "$TEMP_DIR"
     mkdir -p "$REPORT_DIR"
     
-    log_header "RECOLECTANDO DATOS"
+    log_header "COLLECTING DATA"
     get_commit_data
-    log_success "Datos recolectados"
+    log_success "Data collected"
     
-    log_header "CALCULANDO MÉTRICAS"
+    log_header "CALCULATING METRICS"
     
-    log_info "1. Calidad de commits..."
+    log_info "1. Commit quality..."
     quality_score=$(calculate_commit_quality)
     log_success "Puntuación: $quality_score/100"
     
-    log_info "2. Horario de commits..."
+    log_info "2. Commit timing..."
     time_data=$(calculate_time_score)
     time_score="${time_data%%|*}"
     time_in_hours="${time_data#*|}"
     time_in_hours="${time_in_hours%%|*}"
     time_out_hours="${time_data##*|}"
-    log_success "Puntuación: $time_score/100 (In-hours: $time_in_hours, Out-hours: $time_out_hours)"
+    log_success "Score: $time_score/100 (In-hours: $time_in_hours, Out-hours: $time_out_hours)"
     
-    log_info "3. Calidad de mensajes..."
+    log_info "3. Message quality..."
     msg_data=$(calculate_message_quality)
     msg_score="${msg_data%%|*}"
     msg_excellent="${msg_data#*|}"
@@ -619,60 +619,60 @@ run_evaluation() {
     msg_total=$(echo "$msg_data" | cut -d'|' -f5)
     log_success "Puntuación: $msg_score/100 (Excelente: $msg_excellent, Bueno: $msg_good, Pobre: $msg_poor)"
     
-    log_info "4. Consistencia de commits..."
+    log_info "4. Commit consistency..."
     consistency_data=$(calculate_consistency)
     consistency_score="${consistency_data%%|*}"
     consistency_count=$(echo "$consistency_data" | cut -d'|' -f2)
     consistency_days=$(echo "$consistency_data" | cut -d'|' -f3)
     consistency_per_day=$(echo "$consistency_data" | cut -d'|' -f4)
-    log_success "Puntuación: $consistency_score/100 (Total: $consistency_count commits en $consistency_days días)"
+    log_success "Score: $consistency_score/100 (Total: $consistency_count commits over $consistency_days days)"
     
-    log_info "5. Cobertura de cambios..."
+    log_info "5. Change coverage..."
     coverage_data=$(calculate_change_coverage)
     coverage_score="${coverage_data%%|*}"
     coverage_files=$(echo "$coverage_data" | cut -d'|' -f2)
     coverage_avg=$(echo "$coverage_data" | cut -d'|' -f3)
     log_success "Puntuación: $coverage_score/100 (Archivos: $coverage_files, Promedio por commit: $coverage_avg)"
     
-    log_info "6. Tamaño de commits..."
+    log_info "6. Commit size..."
     size_data=$(calculate_commit_size)
     size_score="${size_data%%|*}"
     size_total=$(echo "$size_data" | cut -d'|' -f2)
     size_avg=$(echo "$size_data" | cut -d'|' -f3)
-    log_success "Puntuación: $size_score/100 (Líneas totales: $size_total, Promedio: $size_avg por commit)"
+    log_success "Score: $size_score/100 (Total lines: $size_total, Average: $size_avg per commit)"
     
-    log_info "7. Limpieza de merge commits..."
+    log_info "7. Merge commit cleanliness..."
     merge_data=$(calculate_merge_cleanliness)
     merge_score="${merge_data%%|*}"
     merge_count=$(echo "$merge_data" | cut -d'|' -f2)
     log_success "Puntuación: $merge_score/100 (Merge commits: $merge_count)"
     
-    log_info "8. Actividad fuera de horas..."
+    log_info "8. Out-of-hours activity..."
     ooh_data=$(calculate_out_of_hours)
     ooh_score="${ooh_data%%|*}"
     ooh_late=$(echo "$ooh_data" | cut -d'|' -f2)
     ooh_after=$(echo "$ooh_data" | cut -d'|' -f3)
     ooh_weekend=$(echo "$ooh_data" | cut -d'|' -f4)
-    log_success "Puntuación: $ooh_score/100 (Madrugada: $ooh_late, Después horas: $ooh_after, Fin semana: $ooh_weekend)"
+    log_success "Score: $ooh_score/100 (Late night: $ooh_late, After hours: $ooh_after, Weekend: $ooh_weekend)"
     
-    log_info "9. Integridad del código..."
+    log_info "9. Code integrity..."
     integrity_data=$(calculate_code_integrity)
     integrity_score="${integrity_data%%|*}"
     integrity_issues=$(echo "$integrity_data" | cut -d'|' -f2)
     log_success "Puntuación: $integrity_score/100 (Problemas detectados: $integrity_issues)"
     
-    log_info "10. Convención de nombres..."
+    log_info "10. Naming convention..."
     naming_data=$(calculate_naming_convention)
     naming_score="${naming_data%%|*}"
     naming_conventional=$(echo "$naming_data" | cut -d'|' -f2)
     naming_nonconventional=$(echo "$naming_data" | cut -d'|' -f3)
     naming_total=$(echo "$naming_data" | cut -d'|' -f4)
-    log_success "Puntuación: $naming_score/100 (Convencionales: $naming_conventional/$naming_total)"
+    log_success "Score: $naming_score/100 (Conventional: $naming_conventional/$naming_total)"
     
     # ====================================================================
-    # CALCULAR PUNTUACIÓN PONDERADA FINAL
+    # CALCULATE FINAL WEIGHTED SCORE
     # ====================================================================
-    log_header "RESULTADO FINAL"
+    log_header "FINAL RESULT"
     
     final_score=$(( 
         (quality_score * 15 +
@@ -702,46 +702,46 @@ run_evaluation() {
     fi
     
     echo -e "\n${MAGENTA}╔════════════════════════════════════════╗${NC}"
-    echo -e "${MAGENTA}║${NC}         PUNTUACIÓN FINAL: ${GREEN}$final_score/100${NC}${MAGENTA}            ║${NC}"
-    echo -e "${MAGENTA}║${NC}         Calificación: ${YELLOW}$rating${NC}${MAGENTA}     ║${NC}"
+    echo -e "${MAGENTA}║${NC}         FINAL SCORE: ${GREEN}$final_score/100${NC}${MAGENTA}            ║${NC}"
+    echo -e "${MAGENTA}║${NC}         Grade: ${YELLOW}$rating${NC}${MAGENTA}     ║${NC}"
     echo -e "${MAGENTA}╚════════════════════════════════════════╝${NC}\n"
     
     # ====================================================================
-    # GENERAR REPORTES
+    # GENERATE REPORTS
     # ====================================================================
-    log_header "GENERANDO REPORTES"
+    log_header "GENERATING REPORTS"
     
     generate_json_report "$JSON_REPORT"
-    log_success "Reporte JSON: $JSON_REPORT"
+    log_success "JSON report: $JSON_REPORT"
     
     generate_html_report "$HTML_REPORT"
-    log_success "Reporte HTML: $HTML_REPORT"
+    log_success "HTML report: $HTML_REPORT"
     
-    # Crear tabla resumen
-    echo -e "\n${CYAN}=== RESUMEN DE PUNTUACIONES ===${NC}\n"
-    printf "%-40s | %5s | %5s\n" "MÉTRICA" "SCORE" "PESO %"
+    # Create summary table
+    echo -e "\n${CYAN}=== SCORE SUMMARY ===${NC}\n"
+    printf "%-40s | %5s | %5s\n" "METRIC" "SCORE" "WEIGHT %"
     printf "%-40s | %5s | %5s\n" "─────────────────────────────────────" "─────" "──────"
-    printf "%-40s | %5d | %5d\n" "1. Calidad de Commits" "$quality_score" "15"
-    printf "%-40s | %5d | %5d\n" "2. Horario de Commits (7 AM - 5 PM)" "$time_score" "15"
-    printf "%-40s | %5d | %5d\n" "3. Calidad de Mensajes" "$msg_score" "15"
-    printf "%-40s | %5d | %5d\n" "4. Consistencia" "$consistency_score" "10"
-    printf "%-40s | %5d | %5d\n" "5. Cobertura de Cambios" "$coverage_score" "10"
-    printf "%-40s | %5d | %5d\n" "6. Tamaño de Commits" "$size_score" "10"
-    printf "%-40s | %5d | %5d\n" "7. Limpieza (Merge Commits)" "$merge_score" "5"
-    printf "%-40s | %5d | %5d\n" "8. Actividad Fuera de Horas" "$ooh_score" "5"
-    printf "%-40s | %5d | %5d\n" "9. Integridad del Código" "$integrity_score" "10"
-    printf "%-40s | %5d | %5d\n" "10. Convención de Nombres" "$naming_score" "5"
+    printf "%-40s | %5d | %5d\n" "1. Commit Quality" "$quality_score" "15"
+    printf "%-40s | %5d | %5d\n" "2. Commit Timing (7 AM - 5 PM)" "$time_score" "15"
+    printf "%-40s | %5d | %5d\n" "3. Message Quality" "$msg_score" "15"
+    printf "%-40s | %5d | %5d\n" "4. Consistency" "$consistency_score" "10"
+    printf "%-40s | %5d | %5d\n" "5. Change Coverage" "$coverage_score" "10"
+    printf "%-40s | %5d | %5d\n" "6. Commit Size" "$size_score" "10"
+    printf "%-40s | %5d | %5d\n" "7. Merge Cleanliness" "$merge_score" "5"
+    printf "%-40s | %5d | %5d\n" "8. Out-of-Hours Activity" "$ooh_score" "5"
+    printf "%-40s | %5d | %5d\n" "9. Code Integrity" "$integrity_score" "10"
+    printf "%-40s | %5d | %5d\n" "10. Naming Convention" "$naming_score" "5"
     printf "%-40s | %5s | %5s\n" "─────────────────────────────────────" "─────" "──────"
-    printf "%-40s | %5d | %5s\n" "PUNTUACIÓN FINAL PONDERADA" "$final_score" "100"
+    printf "%-40s | %5d | %5s\n" "FINAL WEIGHTED SCORE" "$final_score" "100"
     echo ""
     
-    log_header "DETALLES TÉCNICOS"
-    echo -e "${BLUE}Commits totales:${NC} $consistency_count"
-    echo -e "${BLUE}Período de desarrollo:${NC} $consistency_days días"
-    echo -e "${BLUE}Commits/día promedio:${NC} $consistency_per_day"
-    echo -e "${BLUE}Archivos modificados:${NC} $coverage_files"
-    echo -e "${BLUE}Líneas totales:${NC} $size_total"
-    echo -e "${BLUE}Mensajes siguiendo convención:${NC} $naming_conventional/$naming_total"
+    log_header "TECHNICAL DETAILS"
+    echo -e "${BLUE}Total commits:${NC} $consistency_count"
+    echo -e "${BLUE}Development period:${NC} $consistency_days days"
+    echo -e "${BLUE}Average commits/day:${NC} $consistency_per_day"
+    echo -e "${BLUE}Files modified:${NC} $coverage_files"
+    echo -e "${BLUE}Total lines:${NC} $size_total"
+    echo -e "${BLUE}Messages following convention:${NC} $naming_conventional/$naming_total"
     echo ""
     
     rm -rf "$TEMP_DIR"
