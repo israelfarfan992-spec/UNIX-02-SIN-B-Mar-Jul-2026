@@ -23,17 +23,40 @@ sed '$d' log.txt
 sed -n '2,15 p' log.txt
 sed -i '1d' log.txt
 
+
 [israel_farfan] /workspaces/UNIX-02-SIN-B-Mar-Jul-2026 $ sleep 100 &
-[2] 21933
+[1] 21182
 
 [israel_farfan] /workspaces/UNIX-02-SIN-B-Mar-Jul-2026 $ ps -ef | grep sleep
-[1]-  Hecho                      sleep 100
 root           1       0  0 12:21 ?        00:00:00 /bin/sh -c echo Container started trap "exit 0" 15  exec "$@" while sleep 1 & wait $!; do :; done -
-root       21933     722  0 13:14 pts/2    00:00:00 sleep 100
-root       21965       1  0 13:14 ?        00:00:00 sleep 1
-root       21972     722  0 13:14 pts/2    00:00:00 grep --color=auto sleep
+root       21182     722  0 13:12 pts/2    00:00:00 sleep 100
+root       21825       1  0 13:13 ?        00:00:00 sleep 1
+root       21827     722  0 13:13 pts/2    00:00:00 grep --color=auto sleep
+
+[israel_farfan] /workspaces/UNIX-02-SIN-B-Mar-Jul-2026 $ jons
+bash: jons: orden no encontrada
 
 [israel_farfan] /workspaces/UNIX-02-SIN-B-Mar-Jul-2026 $ jobs
-[2]+  Ejecutando                 sleep 100 &
+ 
+# The following lines are an example interactive shell session captured below.
+# They are commented out to keep this file runnable and to provide explanations
+# for each step. Starting from original line 26 (background job example):
 
+# Example: start a background job (sleep for 100 seconds)
+# Command: sleep 100 &
+# Shell output (job started): [2] 21933
 
+# Example: list processes related to 'sleep' using ps and grep
+# Command: ps -ef | grep sleep
+# Sample ps output (columns: USER PID PPID C STIME TTY TIME CMD):
+# root           1       0  0 12:21 ?        00:00:00 /bin/sh -c echo Container started ...
+# root       21933     722  0 13:14 pts/2    00:00:00 sleep 100
+# root       21965       1  0 13:14 ?        00:00:00 sleep 1
+# root       21972     722  0 13:14 pts/2    00:00:00 grep --color=auto sleep
+
+# The 'jobs' command shows current shell background jobs and their status
+# Command: jobs
+# Sample job output: [2]+  Running                 sleep 100 &
+
+# To bring a job to the foreground, use 'fg' with the job id (e.g. %1)
+# Command: fg %1
